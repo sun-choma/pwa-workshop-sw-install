@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA Workshop</title>
+</head>
+<body>
+<h2>SW Install and Caching Example | SWのインストールとキャッシュの例</h2>
+<p>
+    Open dev-tools (<code>Ctrl+Shift+C</code> or <code>F12</code> for Chrome).<br/>
+    Under "Application" tab select "Service worker".<br/>
+    Here you can confirm current Service Worker status.<br/>
+    You can also check Service Worker source code by clicking on blue <code>sw.js</code> label (depends on filename of
+    sw)
+</p>
+<p>
+    dev-toolsを開きます（<code>Ctrl+Shift+C</code>またはChromeの場合は<code>F12</code>）。<br/>
+    アプリケーション」タブで「サービスワーカー」を選択します。<br/>
+    ここで現在のサービスワーカーの状態を確認できます。<br/>
+    青い<code>sw.js</code>ラベルをクリックすると、Service Worker のソースコードを確認することもできます（SWのファイル名によって異なります）。
+</p>
+<img src="sw-tab.png"/>
+<p>
+    Service Worker caches this page and creates one extra entry artificially.<br/>
+    You can confirm existing caches by opening "cache storage".<br/>
+    It should contain <code>index.html</code> and <code>/todo/list</code>
+</p>
+<p>
+    Service Workerはこのページをキャッシュし、1つ余分なエントリーを作成します。<br/>
+    キャッシュストレージを開くことで、既存のキャッシュを確認できます。<br/>
+    <code>index.html</code>と<code>/todo/list</code>が含まれているはずです。
+</p>
+<img src="cs-tab.png"/>
+</body>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js");
+    }
+</script>
+</html>
