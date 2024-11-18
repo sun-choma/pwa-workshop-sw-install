@@ -3,7 +3,7 @@ self.addEventListener('install', async (event) => {
 
     // Adding index page to cache
     // index.htmlをキャシュに追加する
-    await cacheStorage.add("/");
+    await cacheStorage.add("/pwa-workshop-sw-install/");
 
     // Adding mock ToDo list response to cache
     // 仮ToDoリストをキャシュに追加する
